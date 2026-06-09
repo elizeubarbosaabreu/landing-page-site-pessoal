@@ -1,0 +1,20 @@
+﻿Produto,Categorias,Paga_Comissao
+Python para Biocientistas,Python; Programação; Ciência de Dados; Bioinformática,Sim
+BNCC Computação Sem Computadores + 100 Atividades,Educação; BNCC; Computação Desplugada; Professores,Sim
+Hugo Profissional,Desenvolvimento Web; Hugo; Sites; Tecnologia,Sim
+Como Prosperar em Meio a Irmãos Invejosos,Cristão; Desenvolvimento Pessoal; Espiritualidade,Sim
+Colorindo Histórias da Bíblia,Cristão; Infantil; Colorir; Educação Religiosa,Sim
+Domine o ChatGPT e o NotebookLM para Passar em Concursos,IA; ChatGPT; Concursos; Produtividade,Sim
+Curso Do Zero à Automação com Python,Python; Automação; Programação; Tecnologia,Sim
+Ebook Programando Python com Google Colab,Python; Google Colab; Programação,Não
+Kit Dois Ebooks,Python; Programação; Educação,Não
+Jovem Cristão e Decidido,Cristão; Jovens; Desenvolvimento Pessoal,Não
+
+Secao,Produto,Categorias,Paga_Comissao
+PRODUTOS_COM_COMISSAO,Python para Biocientistas,Python; Programação; Ciência de Dados; Bioinformática,Sim
+PRODUTOS_COM_COMISSAO,BNCC Computação Sem Computadores + 100 Atividades,Educação; BNCC; Computação Desplugada; Professores,Sim
+PRODUTOS_COM_COMISSAO,Hugo Profissional,Desenvolvimento Web; Hugo; Sites; Tecnologia,Sim
+PRODUTOS_COM_COMISSAO,Como Prosperar em Meio a Irmãos Invejosos,Cristão; Desenvolvimento Pessoal; Espiritualidade,Sim
+PRODUTOS_COM_COMISSAO,Colorindo Histórias da Bíblia,Cristão; Infantil; Colorir; Educação Religiosa,Sim
+PRODUTOS_COM_COMISSAO,Domine o ChatGPT e o NotebookLM para Passar em Concursos,IA; ChatGPT; Concursos; Produtividade,Sim
+PRODUTOS_COM_COMISSAO,Curso Do Zero à Automação com Python,Python; Automação; Programação; Tecnologia,Sim
