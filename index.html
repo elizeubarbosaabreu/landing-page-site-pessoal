@@ -188,9 +188,119 @@
       font-size: 0.85rem;
     }
 
+    .btn-preview {
+      flex: 0 0 42px;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #e0f2fe;
+      color: #0369a1;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-preview:hover { background: #bae6fd; color: #0369a1; }
+
+    /* Preview Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15,23,42,0.7);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-overlay.active { display: flex; }
+
+    .modal-content {
+      background: #fff;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 500px;
+      height: 85vh;
+      max-height: 700px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+      animation: modalIn 0.25s ease-out;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.95) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border-bottom: 1px solid #e2e8f0;
+      flex-shrink: 0;
+    }
+    .modal-header h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #0f172a;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .modal-close {
+      flex-shrink: 0;
+      background: none;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .modal-close:hover { background: #f1f5f9; }
+
+    .modal-body {
+      flex: 1;
+      position: relative;
+      background: #f8fafc;
+    }
+    .modal-body iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .modal-loading {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      font-size: 0.9rem;
+      gap: 8px;
+    }
+
+    .modal-open { overflow: hidden; }
+
     @media (max-width: 600px) {
       .bio h1 { font-size: 1.6rem; }
       .products-grid { grid-template-columns: 1fr; }
+      .modal-content {
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+        max-width: 100%;
+      }
+      .modal-overlay { padding: 0; }
     }
   </style>
 </head>
@@ -225,6 +335,7 @@
             <span>Python</span><span>Programação</span><span>Ciência de Dados</span><span>Bioinformática</span>
           </div>
           <div class="links">
+            <a href="#" class="btn-preview" onclick='openPreview("https://landinpage-python-para-cientistas.vercel.app/","Python para Biocientistas")' title="Pré-visualizar"><i class="fas fa-eye"></i></a>
             <a href="https://landinpage-python-para-cientistas.vercel.app/" class="btn-primary" target="_blank">Comprar</a>
             <a href="https://dashboard.kiwify.com/join/affiliate/aTE2E4Lp" class="btn-secondary" target="_blank">Afiliado</a>
           </div>
@@ -237,6 +348,7 @@
             <span>Educação</span><span>BNCC</span><span>Computação Desplugada</span><span>Professores</span>
           </div>
           <div class="links">
+            <a href="#" class="btn-preview" onclick='openPreview("https://land-page-computacao.vercel.app/","BNCC Computação Sem Computadores")' title="Pré-visualizar"><i class="fas fa-eye"></i></a>
             <a href="https://land-page-computacao.vercel.app/" class="btn-primary" target="_blank">Comprar</a>
             <a href="https://dashboard.kiwify.com/join/affiliate/KybrgagB" class="btn-secondary" target="_blank">Afiliado</a>
           </div>
@@ -249,6 +361,7 @@
             <span>Desenvolvimento Web</span><span>Hugo</span><span>Sites</span><span>Tecnologia</span>
           </div>
           <div class="links">
+            <a href="#" class="btn-preview" onclick='openPreview("https://hugo-landing-page.vercel.app/","Hugo Profissional")' title="Pré-visualizar"><i class="fas fa-eye"></i></a>
             <a href="https://hugo-landing-page.vercel.app/" class="btn-primary" target="_blank">Comprar</a>
             <a href="https://dashboard.kiwify.com/join/affiliate/Q8iUw8Pm" class="btn-secondary" target="_blank">Afiliado</a>
           </div>
@@ -261,6 +374,7 @@
             <span>Cristão</span><span>Desenvolvimento Pessoal</span><span>Espiritualidade</span>
           </div>
           <div class="links">
+            <a href="#" class="btn-preview" onclick='openPreview("https://como-prosperar.vercel.app/","Como Prosperar em Meio a Irmãos Invejosos")' title="Pré-visualizar"><i class="fas fa-eye"></i></a>
             <a href="https://como-prosperar.vercel.app/" class="btn-primary" target="_blank">Comprar</a>
             <a href="https://dashboard.kiwify.com/join/affiliate/MKVCSAv2" class="btn-secondary" target="_blank">Afiliado</a>
           </div>
@@ -273,6 +387,7 @@
             <span>Cristão</span><span>Infantil</span><span>Colorir</span><span>Educação Religiosa</span>
           </div>
           <div class="links">
+            <a href="#" class="btn-preview" onclick='openPreview("https://colorindo-historias-biblia.vercel.app/","Colorindo Histórias da Bíblia")' title="Pré-visualizar"><i class="fas fa-eye"></i></a>
             <a href="https://colorindo-historias-biblia.vercel.app/" class="btn-primary" target="_blank">Comprar</a>
             <a href="https://dashboard.kiwify.com/join/affiliate/BpGIQNyF" class="btn-secondary" target="_blank">Afiliado</a>
           </div>
@@ -285,6 +400,7 @@
             <span>IA</span><span>ChatGPT</span><span>Concursos</span><span>Produtividade</span>
           </div>
           <div class="links">
+            <a href="#" class="btn-preview" onclick='openPreview("https://pense-como-hacker-landing.vercel.app/","Domine o ChatGPT e o NotebookLM")' title="Pré-visualizar"><i class="fas fa-eye"></i></a>
             <a href="https://pense-como-hacker-landing.vercel.app/" class="btn-primary" target="_blank">Comprar</a>
             <a href="https://dashboard.kiwify.com/join/affiliate/yHkwGB20" class="btn-secondary" target="_blank">Afiliado</a>
           </div>
@@ -297,6 +413,7 @@
             <span>Python</span><span>Automação</span><span>Programação</span><span>Tecnologia</span>
           </div>
           <div class="links">
+            <a href="#" class="btn-preview" onclick='openPreview("https://curso-automacao-python.vercel.app/","Do Zero à Automação com Python")' title="Pré-visualizar"><i class="fas fa-eye"></i></a>
             <a href="https://curso-automacao-python.vercel.app/" class="btn-primary" target="_blank">Comprar</a>
             <a href="https://affiliate.hotmart.com/affiliate-recruiting/view/5083C105745717" class="btn-secondary" target="_blank">Afiliado</a>
           </div>
@@ -317,6 +434,7 @@
             <span>Python</span><span>Google Colab</span><span>Programação</span>
           </div>
           <div class="links">
+            <a href="#" class="btn-preview" onclick='openPreview("https://langing-ebook-colab.vercel.app/","Programando Python com Google Colab")' title="Pré-visualizar"><i class="fas fa-eye"></i></a>
             <a href="https://langing-ebook-colab.vercel.app/" class="btn-primary" target="_blank">Saiba mais</a>
           </div>
         </div>
@@ -328,6 +446,7 @@
             <span>Python</span><span>Programação</span><span>Educação</span>
           </div>
           <div class="links">
+            <a href="#" class="btn-preview" onclick='openPreview("https://kit-ebooks-python.vercel.app/","Kit Dois Ebooks de Python")' title="Pré-visualizar"><i class="fas fa-eye"></i></a>
             <a href="https://kit-ebooks-python.vercel.app/" class="btn-primary" target="_blank">Saiba mais</a>
           </div>
         </div>
@@ -339,6 +458,7 @@
             <span>Cristão</span><span>Jovens</span><span>Desenvolvimento Pessoal</span>
           </div>
           <div class="links">
+            <a href="#" class="btn-preview" onclick='openPreview("https://jovem-cristao-decidido-ebook.vercel.app/","Jovem Cristão e Decidido")' title="Pré-visualizar"><i class="fas fa-eye"></i></a>
             <a href="https://jovem-cristao-decidido-ebook.vercel.app/" class="btn-primary" target="_blank">Saiba mais</a>
           </div>
         </div>
@@ -365,5 +485,53 @@
     </footer>
 
   </div>
+
+  <!-- Preview Modal -->
+  <div id="preview-modal" class="modal-overlay" onclick="closePreview(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 id="modal-title">Pré-visualizar</h3>
+        <button class="modal-close" onclick="closePreview()" aria-label="Fechar"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-loading" id="modal-loading">
+          <i class="fas fa-spinner fa-spin"></i> Carregando...
+        </div>
+        <iframe id="preview-iframe" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openPreview(url, title) {
+      var modal = document.getElementById('preview-modal');
+      var iframe = document.getElementById('preview-iframe');
+      var loading = document.getElementById('modal-loading');
+      var titleEl = document.getElementById('modal-title');
+      iframe.onload = function () { loading.style.display = 'none'; };
+      iframe.src = url;
+      titleEl.textContent = title || 'Pré-visualizar';
+      loading.style.display = 'flex';
+      modal.classList.add('active');
+      document.body.classList.add('modal-open');
+      window.addEventListener('keydown', escHandler);
+      return false;
+    }
+
+    function closePreview(e) {
+      if (e && e.target !== e.currentTarget) return;
+      var modal = document.getElementById('preview-modal');
+      var iframe = document.getElementById('preview-iframe');
+      modal.classList.remove('active');
+      document.body.classList.remove('modal-open');
+      window.removeEventListener('keydown', escHandler);
+      setTimeout(function () { iframe.src = ''; }, 300);
+    }
+
+    function escHandler(e) {
+      if (e.key === 'Escape') closePreview();
+    }
+  </script>
+
 </body>
 </html>
